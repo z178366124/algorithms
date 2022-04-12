@@ -6,11 +6,13 @@
 template <class T>
 class heap {
 private:
-	int capacity;// µ±Ç°ÈİÁ¿
-	T* array;  // ¶ÑÊı×é
-	int size;  // ¶Ñ´óĞ¡
+	int capacity;// å½“å‰å®¹é‡
+	T* array;  // å †æ•°ç»„
+	int size;  // å †å¤§å°
+	int(*cmp)(T a,T b);
 public:
 	heap();
+	heap(int (*ocmp)(T, T));
 	~heap();
 	void push(T data);
 	T pop();
